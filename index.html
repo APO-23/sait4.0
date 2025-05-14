@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
+    <title>Онлайн Конвертер</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+     <header>
+    <div class="logo">ONLINE <span class="highlight">CONVERT</span></div>
+    <nav>
+        <ul>
+            <li><a href="#">Главная</a></li>
+            <li><a href="#about">О нас</a></li>
+            <li><a href="#" id="contactsBtn">Контакты</a></li>
+            <li><a href="#" id="convertersBtn">Конвертеры</a></li>
+        </ul>
+    </nav>
+    <div class="auth-buttons">
+        <a href="form.html" class="button" id="fillFormBtn" style="display: none;">Заполнить анкету</a>
+        <button class="button" id="loginBtn">Вход</button>
+        <button class="button primary" id="registerBtn">Регистрация</button>
+        <button class="button logout" id="logoutBtn" style="display: none;">Выйти</button>
+    </div>
+</header>
+    <section class="hero">
+        <h1>Бесплатный онлайн конвертер</h1>
+        <p>Конвертируйте файлы в нужные форматы быстро и бесплатно</p>
+    </section>
+    <section id="converters" class="converter-table">
+        <h2>Выберите тип конвертера</h2>
+        <table>
+            <tr>
+                <td><a href="video-converter.html">🎥 Видео-конвертер</a></td>
+                <td><a href="audio-converter.html">🎵 Аудио-конвертер</a></td>
+            </tr>
+            <tr>
+                <td><a href="image-converter.html">🖼️ Конвертер изображений</a></td>
+                <td><a href="document-converter.html">📄 Конвертер документов</a></td>
+            </tr>
+            <tr>
+                <td><a href="archive-converter.html">📦 Конвертер архивов</a></td>
+                <td><a href="ebook-converter.html">📚 Конвертер электронных книг</a></td>
+            </tr>
+        </table>
+    </section>
+    
+    <section class="media">
+        <h2>Демонстрация возможностей</h2>
+        <video controls>
+    <source src="video.mp4" type="video/mp4">
+    Ваш браузер не поддерживает видео.
+</video>
+
+<audio controls>
+    <source src="audio.mp3" type="audio/mpeg">
+    Ваш браузер не поддерживает аудио.
+</audio>
+    </section>
+<section class="gallery-section">
+    <h2>Фотогалерея</h2>
+    <div class="gallery-wrapper">
+        <button class="gallery-btn left">&#10094;</button>
+        <div class="gallery-track">
+            <div class="gallery">
+                <a href="images/photo1.jpg" target="_blank"><img src="images/photo1.jpg" alt="Фото 1" loading="lazy"></a>
+                <a href="images/photo2.jpg" target="_blank"><img src="images/photo1.jpg" alt="Фото 2" loading="lazy"></a>
+                <a href="images/photo3.jpg" target="_blank"><img src="images/photo3.jpg" alt="Фото 3" loading="lazy"></a>
+                <a href="images/photo4.jpg" target="_blank"><img src="images/photo4.jpg" alt="Фото 4" loading="lazy"></a>
+                <a href="images/photo5.jpg" target="_blank"><img src="images/photo5.jpg" alt="Фото 5" loading="lazy"></a>
+                <a href="images/photo6.jpg" target="_blank"><img src="images/photo6.jpg" alt="Фото 6" loading="lazy"></a>
+<a href="images/photo7.jpg" target="_blank"><img src="images/photo7.jpg" alt="Фото 7" loading="lazy"></a>
+<a href="images/photo8.jpg" target="_blank"><img src="images/photo8.jpg" alt="Фото 8" loading="lazy"></a>
+            </div>
+        </div>
+        <button class="gallery-btn right">&#10095;</button>
+    </div>
+</section>
+ <section class="file-types">
+    <h2>Поддерживаемые типы файлов</h2>
+    <ul>
+        <li>Медиа-файлы
+            <ul>
+                <li>Видео (.mp4, .avi, .mov)</li>
+                <li>Аудио (.mp3, .wav, .flac)</li>
+            </ul>
+        </li>
+        <li>Документы
+            <ul>
+                <li>Текстовые файлы (.docx, .pdf, .txt)</li>
+                <li>Электронные книги (.epub, .mobi, .azw3)</li>
+            </ul>
+        </li>
+        <li>Изображения и архивы
+            <ul>
+                <li>Графические файлы (.jpg, .png, .gif, .svg)</li>
+                <li>Архивы (.zip, .rar, .7z)</li>
+            </ul>
+        </li>
+    </ul>
+</section>
+<section id="about">
+    <h2>О нашем сайте</h2>
+    <p>Наш онлайн-конвертер создан для быстрого и удобного преобразования различных форматов файлов. 
+       Мы поддерживаем широкий спектр конверсий, обеспечивая простоту использования и высокое качество результата.</p>
+    <ul>
+        <li>Конвертация файлов в разные форматы</li>
+        <li>Простота использования — загрузите файл и получите результат</li>
+        <li>Поддержка популярных типов файлов: документы, изображения, аудио, видео</li>
+        <li>Быстрая обработка данных</li>
+    </ul>
+    <p>Наша цель — сделать процесс конвертации максимально удобным для пользователей.</p>
+</section>
+
+   <section id="contact">
+    <h2>Связь со мной</h2>
+    <p><span class="icon">📧</span>Email: <a href="mailto:kopusov.eduard@gmail.com">kopusov.eduard@gmail.com</a></p>
+    <p><span class="icon">📞</span>Телефон: <a href="tel:+123456789">+7 (707) 001 48 23</a></p>
+</section>
+    
+    <footer>
+        <p>&copy; 2025 Онлайн Конвертер. Все права защищены.</p>
+    </footer>
+<script src="script.js"></script>
+
+  <!-- Модальное окно авторизации -->
+<div id="authModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modalTitle">Вход</h2>
+
+        <!-- Форма входа -->
+       <div id="loginForm" class="auth-form" style="display: none;">
+            <input type="email" id="loginEmail" placeholder="Email">
+
+          <div class="password-container">
+        <input type="password" id="loginPass" placeholder="Пароль">
+       <span class="toggle-password" data-target="loginPass"></span>
+    </div>
+
+            <p id="loginError" style="color: red; display: none;">Привет</p>
+            <button id="authActionBtn">Войти</button>
+            <p>Нет аккаунта? <a href="#" id="toggleToRegister">Зарегистрироваться</a></p>
+        </div>
+
+        <!-- Форма регистрации -->
+        <div id="registerForm" class="auth-form" style="display: none;">
+            <input type="name" id="regname" placeholder="Имя пользователя">
+            <input type="email" id="regEmail" placeholder="Email">
+            <input type="password" id="regPass" placeholder="Пароль">
+            <input type="password" id="confirmPass" placeholder="Повторите пароль">
+            <p id="errorText" style="color: red; display: none;">Пароли не совпадают!</p>
+            <button id="registerBtnAction">Зарегистрироваться</button>
+            <p>Уже есть аккаунт? <a href="#" id="toggleToLogin">Войти</a></p>
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+</body>
+</html>

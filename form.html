@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<style>
+    /* Динамический отступ для формы */
+    .form-container {
+        margin-top: calc(80px + 2em) !important;
+    }
+    
+    @media (max-width: 768px) {
+        .form-container {
+            margin-top: calc(60px + 1em) !important;
+        }
+    }
+</style>
+    <meta charset="UTF-8">
+ 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
+    <title>Анкета</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <header>
+        <h1>Анкета пользователя</h1>
+        <p>Заполните форму, чтобы мы могли улучшить сервис</p>
+    </header>
+
+
+    <section class="form-container"style="width: 90%; max-width: 600px; margin: 30px auto;">
+
+       <form action="#" method="post" id="userForm">
+    <label for="name">Имя:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="surname">Фамилия:</label>
+    <input type="text" id="surname" name="surname" required>
+
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="dob">Дата рождения:</label>
+    <input type="text" id="dob" name="dob" placeholder="дд.мм.гггг" required
+           onfocus="this.type='date'" onblur="if(!this.value) this.type='text'">
+
+    <label for="gender">Пол:</label>
+    <select id="gender" name="gender" required>
+        <option value="">--Выберите--</option>
+        <option value="male">Мужской</option>
+        <option value="female">Женский</option>
+        <option value="other">Другое</option>
+    </select>
+
+    <label for="city">Место жительства:</label>
+    <input type="text" id="city" name="city" required>
+
+    <label for="comment">Комментарий:</label>
+    <textarea id="comment" name="comment" rows="4" required></textarea>
+
+    <button type="submit">Отправить</button>
+</form>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("userForm");
+    const dobInput = document.getElementById("dob");
+
+    const today = new Date().toISOString().split("T")[0];
+    dobInput.setAttribute("max", today);
+
+    dobInput.addEventListener("input", function () {
+        let parts = this.value.split("-");
+        if (parts.length === 3) {
+            parts[0] = parts[0].substring(0, 4);
+            this.value = parts.join("-");
+        }
+        if (this.value > today) {
+            this.value = today;
+        }
+    });
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+
+        form.reset(); // очищаем все поля
+    });
+});
+ // Вывод без XSS
+        const commentOutput = document.getElementById("commentOutput");
+        commentOutput.textContent =
+            `Имя: ${name}, Фамилия: ${surname}, Email: ${email}, ` +
+            `Дата рождения: ${dob}, Пол: ${gender}, Город: ${city}, ` +
+            `Комментарий: ${comment}`;
+</script>
+</body>
+</html>

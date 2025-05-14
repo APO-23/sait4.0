@@ -1,0 +1,754 @@
+﻿/* === Общие стили === */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-top: 80px; /* Чтобы контент не залезал под фиксированную шапку */
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* === Шапка сайта === */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #004d00;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    transition: top 0.3s ease-in-out;
+    z-index: 1000;
+    border-bottom: 2px solid #b3e6b3;
+}
+
+    header.hidden {
+        top: -100px;
+    }
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.highlight {
+    color: #00ff00;
+}
+
+/* === Меню навигации === */
+nav {
+    margin-left: 0;
+}
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 18px;
+        padding: 12px 10px;
+    }
+
+        nav a.active {
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+/* Стили для двухуровневого списка */
+.file-types {
+    text-align: center;
+    padding: 20px;
+    background: #e8f5e9;
+    border-radius: 10px;
+    width: 80%;
+    margin: 20px auto;
+}
+
+    .file-types h2 {
+        color: #006400;
+    }
+
+    .file-types ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .file-types li {
+        font-size: 18px;
+        font-weight: bold;
+        padding: 10px;
+        border-bottom: 1px solid #c8e6c9;
+    }
+
+    .file-types ul ul {
+        padding-left: 20px;
+    }
+
+        .file-types ul ul li {
+            font-size: 16px;
+            font-weight: normal;
+            color: #555;
+        }
+/* === Кнопки входа и регистрации === */
+.auth-buttons .button {
+    padding: 8px 12px;
+    text-decoration: none;
+    color: white;
+    background: #008000;
+    border-radius: 5px;
+}
+
+.auth-buttons .primary {
+    background: #00cc00;
+}
+
+/* === Блок Hero === */
+.hero {
+    background-color: #1e5621;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+    .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24"><path fill="%23ffffff" opacity="0.1" d="M4 2h10l6 6v14H4V2zm10 1.5V9h5.5L14 3.5z"/></svg>'), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24"><path fill="%23ffffff" opacity="0.1" d="M3 3h18v18H3V3zm2 2v14h14V5H5zm6 1h2v10h-2V6zm-4 2h2v6H7V8zm8 2h2v4h-2v-4z"/></svg>');
+        background-repeat: repeat;
+        background-size: 150px;
+        opacity: 0.15;
+        z-index: 0;
+    }
+
+    .hero h1, .hero p {
+        position: relative;
+        z-index: 1;
+    }
+
+/* === Секция о нас === */
+#about {
+    text-align: center;
+    padding: 40px 20px;
+    background: #e8f5e9;
+    border-radius: 10px;
+    width: 80%;
+    margin: 30px auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+    #about h2 {
+        color: #006400;
+        font-size: 24px;
+    }
+
+    #about ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    #about li {
+        font-size: 18px;
+        padding: 5px;
+    }
+
+/* === Блок таблиц === */
+table {
+    width: 80%;
+    margin: 100px auto 0;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 15px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+    td a {
+        display: block;
+        padding: 10px;
+        background: #00b300;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+        td a:hover {
+            background: #009900;
+        }
+
+/* === Блок конвертеров === */
+.converter-table {
+    text-align: center;
+    padding: 30px;
+}
+
+/* === Секция с медиа === */
+.media {
+    text-align: center;
+    padding: 20px;
+}
+
+video, audio {
+    max-width: 100%;
+    max-width: 640px;
+    max-height: 360px;
+    width: 100%;
+    display: block;
+    margin: 20px auto;
+}
+
+/* === Секция контактов === */
+#contact {
+    text-align: center;
+    background: #f4f4f4;
+    padding: 15px;
+    margin-top: 50px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+}
+
+    #contact h2 {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    #contact p {
+        font-size: 14px;
+        margin: 4px 0;
+    }
+
+    #contact a {
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+        #contact a:hover {
+            text-decoration: underline;
+        }
+
+    #contact .icon {
+        margin-right: 8px;
+        font-size: 16px;
+        vertical-align: middle;
+    }
+
+/* === Подвал === */
+footer {
+    text-align: center;
+    background: #004d00;
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* === Форма анкеты и авторизации === */
+.form-container {
+    width: 50%;
+    margin: 150px auto 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+input, select, textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+    input[type="date"] {
+        user-select: none;
+    }
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    background: #28a745;
+    color: white;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+    button:hover {
+        background: #218838;
+    }
+
+.auth-form input {
+    width: 85%;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 16px;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.auth-form button {
+    width: 85%;
+    display: block;
+    margin: 15px auto 10px auto;
+    padding: 10px;
+    background-color: #28a745;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    .auth-form button:hover {
+        background-color: #218838;
+    }
+
+/* === Выпадающее меню инструментов === */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #006400;
+    padding: 10px;
+    list-style: none;
+    top: 100%;
+    left: 0;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 5px 10px;
+}
+
+/* === Кнопка и панель с инструментами === */
+#toolsToggle {
+    background: none;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    padding: 10px 15px;
+    font-weight: bold;
+    color: white;
+}
+
+.dropdown-panel {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    padding: 30px 60px;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.tools-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+    .tools-list li a {
+        text-decoration: none;
+        color: #333;
+        padding: 15px 20px;
+        display: block;
+        border-radius: 8px;
+        font-weight: bold;
+        text-align: center;
+        transition: background 0.3s, color 0.3s;
+    }
+
+        .tools-list li a:hover {
+            background-color: #1e7c2d;
+            color: white;
+        }
+
+/* === Формат выбора === */
+.format-select {
+    margin-top: 20px;
+}
+
+    .format-select select {
+        padding: 5px 10px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
+
+/* === Модальные окна === */
+.modal, #logoutModal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content, #logoutModal {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#logoutModal button {
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#logoutConfirm {
+    background-color: red;
+    color: white;
+}
+
+#logoutCancel {
+    background-color: gray;
+    color: white;
+}
+/* === Вложенные списки (например, в списке поддерживаемых файлов) === */
+
+.file-types li {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.file-types ul {
+    list-style-type: none; /* убираем точки у всех уровней */
+    padding-left: 0;
+    margin-bottom: 10px;
+}
+
+    .file-types ul ul {
+        list-style-type: none;
+        padding-left: 20px; /* можно оставить отступ для вложенности */
+        margin-top: 5px;
+    }
+
+textarea {
+    resize: vertical; /* разрешает изменение только по вертикали */
+}
+
+.gallery-section {
+    text-align: center;
+    padding: 30px 20px;
+    background: #e8f5e9; /* Зеленый фон */
+    border-radius: 10px;
+    width: 80%;
+    margin: 30px auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+    position: relative; /* Для правильного позиционирования кнопок */
+}
+
+.gallery-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding: 0 60px; /* регулирует расстояние до которого "прячутся" изображения */
+}
+
+    .gallery-wrapper::before,
+    .gallery-wrapper::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 60px; /* ширина затухания */
+        height: 100%;
+        z-index: 5;
+        pointer-events: none;
+    }
+
+    .gallery-wrapper::before {
+        left: 0;
+        background: linear-gradient(to right, #e8f5e9 0%, transparent 100%);
+    }
+
+    .gallery-wrapper::after {
+        right: 0;
+        background: linear-gradient(to left, #e8f5e9 0%, transparent 100%);
+    }
+
+.gallery-track {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.gallery {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 24px;
+    margin-left: -13px; /* Компенсируем gap слева */
+}
+
+    .gallery a img {
+        height: 130px;
+        width: auto;
+        border-radius: 10px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+    }
+
+        .gallery a img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 128, 0, 0.3);
+        }
+
+.gallery-btn {
+    position: absolute;
+    top: 50%; /* Кнопки будут по центру по вертикали */
+    transform: translateY(-50%);
+    font-size: 28px;
+    background: #006400; /* Зеленый фон */
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 12px;
+    border-radius: 50%;
+    z-index: 10;
+    transition: background 0.3s;
+    width: 40px; /* Установите фиксированную ширину */
+    height: 40px; /* Установите фиксированную высоту */
+}
+
+    .gallery-btn:hover {
+        background: #004d00;
+    }
+
+    /* Позиционирование кнопок */
+    .gallery-btn.left {
+        left: -30px; /* Позиция кнопки слева */
+    }
+
+    .gallery-btn.right {
+        right: -30px; /* Позиция кнопки справа */
+    }
+/* === Адаптивность === */
+@media (max-width: 1024px) {
+    .hero, #about, .file-types, .gallery-section, .converter-table {
+        width: 85%;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        padding: 10px 15px;
+    }
+
+    .logo {
+        font-size: 20px;
+        margin-right: auto;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+        nav ul {
+            justify-content: space-around;
+            gap: 10px;
+        }
+
+        nav a {
+            font-size: 14px;
+            padding: 6px 8px;
+        }
+
+    .auth-buttons {
+        order: 2;
+        margin-left: auto;
+    }
+
+    .hero, #about, .file-types, .gallery-section, .converter-table {
+        width: 90%;
+        padding: 20px 15px;
+    }
+
+    .form-container {
+        width: 90%;
+    }
+
+    .gallery a img {
+        height: 110px;
+    }
+
+    .gallery-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    td {
+        padding: 10px 8px;
+    }
+
+        td a {
+            padding: 8px;
+            font-size: 14px;
+        }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 18px;
+    }
+
+    nav a {
+        font-size: 12px;
+        padding: 4px 6px;
+    }
+
+    .auth-buttons .button {
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .gallery a img {
+        height: 90px;
+    }
+
+    .gallery-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+
+    .form-container {
+        padding: 15px;
+    }
+
+    input, select, textarea, button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+/* Выравниваем высоту кнопок */
+#logoutBtn {
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    #logoutBtn {
+        height: 36px;
+        padding: 0 12px;
+    }
+}
+/* Исправление для поля выбора файла */
+input[type="file"] {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-top: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+}
+
+    /* Для текста "файл не выбран" */
+    input[type="file"]::file-selector-button {
+        padding: 8px 12px;
+        background: #28a745;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    input[type="file"] {
+        font-size: 14px;
+    }
+}
+.form-container {
+    overflow: hidden; /* Скрывает вылазящие элементы */
+}
+
+.format-select, .format-select select {
+    width: 100%;
+    max-width: 100%;
+}
